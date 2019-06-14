@@ -9,7 +9,7 @@ height = 21.8898
 
 [sub_resource type="OccluderPolygon2D" id=2]
 cull_mode = 2
-polygon = PoolVector2Array( -7.55858, -20.4091, 2.90088, -20.5096, 9.43803, 0.509834, 3.5043, 19.5179, -7.75972, 19.015, -13.1906, 0.710976 )
+polygon = PoolVector2Array( -7.55858, -20.4091, 2.90088, -20.5096, 9.55777, 0.584749, 3.78145, 19.8675, -7.26151, 20.3771, -13.1906, 0.710976 )
 
 [node name="Character" type="KinematicBody2D"]
 script = ExtResource( 1 )

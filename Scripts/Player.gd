@@ -1,11 +1,14 @@
 extends "res://Scripts/Character.gd"
 
 var motion = Vector2()
-
+enum VisionMode {DARK , NIGHTVISION}
+var current_mode 
+var vision_change_on_colldown= false 
 
 func _ready():
 	Global.Player = self
-	pass
+	current_mode = VisionMode.DARK
+	
 	
 func _process(delta):
 	update_motion(delta)
@@ -31,12 +34,21 @@ func update_motion(delta):
 		motion.x = lerp(motion.x,0,FRICTION)
 		
 func _input(event):
-	if Input.is_action_just_pressed("ui_select"):
-		toggle_torch()
-		pass
+	if Input.is_action_just_pressed("ui_vision_mode") && not vision_change_on_colldown:
+		cycle_vision_mode()
+		$"VisionModeTimer".start()
+		vision_change_on_colldown =true
 		
-func toggle_torch():
-	if $Torch.enabled:
-		$Torch.enabled=false
+func cycle_vision_mode():
+
+	if current_mode == VisionMode.DARK:
+		get_tree().call_group("interface","NightVision_mode")
+		current_mode=VisionMode.NIGHTVISION
 	else:
-		$Torch.enabled=true
+		get_tree().call_group("interface","DarkVision_mode")
+		current_mode = VisionMode.DARK
+			
+func _on_Timer_timeout(): 
+	vision_change_on_colldown =false
+
+	

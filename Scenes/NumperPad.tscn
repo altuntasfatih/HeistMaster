@@ -1,0 +1,216 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Scenes/mytheme.tres" type="Theme" id=1]
+[ext_resource path="res://Scenes/NumperPad.gd" type="Script" id=2]
+[ext_resource path="res://GFX/Interface/PNG/metalPanel.png" type="Texture" id=3]
+[ext_resource path="res://GFX/Interface/PNG/glassPanel.png" type="Texture" id=4]
+[ext_resource path="res://GFX/Interface/PNG/dotRed.png" type="Texture" id=5]
+
+[node name="NumperPad" type="Popup"]
+margin_right = 300.0
+margin_bottom = 400.0
+theme = ExtResource( 1 )
+script = ExtResource( 2 )
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 3 )
+patch_margin_left = 10
+patch_margin_top = 10
+patch_margin_right = 10
+patch_margin_bottom = 10
+
+[node name="VSplitContainer" type="VSplitContainer" parent="."]
+editor/display_folded = true
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="DisplayContainer" type="CenterContainer" parent="VSplitContainer"]
+margin_right = 300.0
+margin_bottom = 100.0
+
+[node name="DisplayGlass" type="NinePatchRect" parent="VSplitContainer/DisplayContainer"]
+margin_left = 25.0
+margin_right = 275.0
+margin_bottom = 100.0
+rect_min_size = Vector2( 250, 100 )
+texture = ExtResource( 4 )
+
+[node name="Display" type="RichTextLabel" parent="VSplitContainer/DisplayContainer"]
+margin_left = 100.0
+margin_top = 10.0
+margin_right = 200.0
+margin_bottom = 90.0
+rect_min_size = Vector2( 100, 80 )
+tab_size = 3
+text = "selam ben fatih
+"
+
+[node name="ButtonContainer" type="CenterContainer" parent="VSplitContainer"]
+margin_top = 112.0
+margin_right = 300.0
+margin_bottom = 400.0
+
+[node name="ButtonGrid" type="GridContainer" parent="VSplitContainer/ButtonContainer"]
+margin_left = 150.0
+margin_top = 144.0
+margin_right = 150.0
+margin_bottom = 144.0
+custom_constants/vseparation = 8
+custom_constants/hseparation = 8
+columns = 3
+
+[node name="Button" type="Button" parent="VSplitContainer/ButtonContainer/ButtonGrid"]
+margin_right = 40.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 40, 40 )
+text = "1"
+
+[node name="Button2" type="Button" parent="VSplitContainer/ButtonContainer/ButtonGrid"]
+margin_left = 48.0
+margin_right = 88.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 40, 40 )
+focus_neighbour_left = NodePath(".")
+focus_neighbour_top = NodePath(".")
+focus_neighbour_right = NodePath(".")
+focus_neighbour_bottom = NodePath(".")
+focus_next = NodePath(".")
+focus_previous = NodePath(".")
+text = "2"
+
+[node name="Button3" type="Button" parent="VSplitContainer/ButtonContainer/ButtonGrid"]
+margin_left = 96.0
+margin_right = 136.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 40, 40 )
+focus_neighbour_left = NodePath(".")
+focus_neighbour_top = NodePath(".")
+focus_neighbour_right = NodePath(".")
+focus_neighbour_bottom = NodePath(".")
+focus_next = NodePath(".")
+focus_previous = NodePath(".")
+text = "3"
+
+[node name="Button4" type="Button" parent="VSplitContainer/ButtonContainer/ButtonGrid"]
+margin_top = 48.0
+margin_right = 40.0
+margin_bottom = 88.0
+rect_min_size = Vector2( 40, 40 )
+focus_neighbour_left = NodePath(".")
+focus_neighbour_top = NodePath(".")
+focus_neighbour_right = NodePath(".")
+focus_neighbour_bottom = NodePath(".")
+focus_next = NodePath(".")
+focus_previous = NodePath(".")
+text = "4"
+
+[node name="Button5" type="Button" parent="VSplitContainer/ButtonContainer/ButtonGrid"]
+margin_left = 48.0
+margin_top = 48.0
+margin_right = 88.0
+margin_bottom = 88.0
+rect_min_size = Vector2( 40, 40 )
+focus_neighbour_left = NodePath(".")
+focus_neighbour_top = NodePath(".")
+focus_neighbour_right = NodePath(".")
+focus_neighbour_bottom = NodePath(".")
+focus_next = NodePath(".")
+focus_previous = NodePath(".")
+text = "5"
+
+[node name="Button6" type="Button" parent="VSplitContainer/ButtonContainer/ButtonGrid"]
+margin_left = 96.0
+margin_top = 48.0
+margin_right = 136.0
+margin_bottom = 88.0
+rect_min_size = Vector2( 40, 40 )
+focus_neighbour_left = NodePath(".")
+focus_neighbour_top = NodePath(".")
+focus_neighbour_right = NodePath(".")
+focus_neighbour_bottom = NodePath(".")
+focus_next = NodePath(".")
+focus_previous = NodePath(".")
+text = "6"
+
+[node name="Button7" type="Button" parent="VSplitContainer/ButtonContainer/ButtonGrid"]
+margin_top = 96.0
+margin_right = 40.0
+margin_bottom = 136.0
+rect_min_size = Vector2( 40, 40 )
+focus_neighbour_left = NodePath(".")
+focus_neighbour_top = NodePath(".")
+focus_neighbour_right = NodePath(".")
+focus_neighbour_bottom = NodePath(".")
+focus_next = NodePath(".")
+focus_previous = NodePath(".")
+text = "7"
+
+[node name="Button8" type="Button" parent="VSplitContainer/ButtonContainer/ButtonGrid"]
+margin_left = 48.0
+margin_top = 96.0
+margin_right = 88.0
+margin_bottom = 136.0
+rect_min_size = Vector2( 40, 40 )
+focus_neighbour_left = NodePath(".")
+focus_neighbour_top = NodePath(".")
+focus_neighbour_right = NodePath(".")
+focus_neighbour_bottom = NodePath(".")
+focus_next = NodePath(".")
+focus_previous = NodePath(".")
+text = "8"
+
+[node name="Button9" type="Button" parent="VSplitContainer/ButtonContainer/ButtonGrid"]
+margin_left = 96.0
+margin_top = 96.0
+margin_right = 136.0
+margin_bottom = 136.0
+rect_min_size = Vector2( 40, 40 )
+focus_neighbour_left = NodePath(".")
+focus_neighbour_top = NodePath(".")
+focus_neighbour_right = NodePath(".")
+focus_neighbour_bottom = NodePath(".")
+focus_next = NodePath(".")
+focus_previous = NodePath(".")
+text = "9"
+
+[node name="Light" type="TextureRect" parent="VSplitContainer/ButtonContainer/ButtonGrid"]
+margin_top = 144.0
+margin_right = 40.0
+margin_bottom = 184.0
+rect_min_size = Vector2( 40, 40 )
+texture = ExtResource( 5 )
+expand = true
+
+[node name="Button0" type="Button" parent="VSplitContainer/ButtonContainer/ButtonGrid"]
+margin_left = 48.0
+margin_top = 144.0
+margin_right = 88.0
+margin_bottom = 184.0
+rect_min_size = Vector2( 40, 40 )
+focus_neighbour_left = NodePath(".")
+focus_neighbour_top = NodePath(".")
+focus_neighbour_right = NodePath(".")
+focus_neighbour_bottom = NodePath(".")
+focus_next = NodePath(".")
+focus_previous = NodePath(".")
+text = "0"
+
+[node name="Okey" type="Button" parent="VSplitContainer/ButtonContainer/ButtonGrid"]
+margin_left = 96.0
+margin_top = 144.0
+margin_right = 136.0
+margin_bottom = 184.0
+rect_min_size = Vector2( 40, 40 )
+focus_neighbour_left = NodePath(".")
+focus_neighbour_top = NodePath(".")
+focus_neighbour_right = NodePath(".")
+focus_neighbour_bottom = NodePath(".")
+focus_next = NodePath(".")
+focus_previous = NodePath(".")
+text = "OK"
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

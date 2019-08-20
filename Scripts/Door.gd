@@ -14,7 +14,6 @@ func _on_Door_body_exited(body):
 func open():
 	$AnimationPlayer.play("Open")
 	
-func _input(event):
+func _input_event(viewport, event, shape_idx):
 	if Input.is_mouse_button_pressed(BUTTON_LEFT) and can_click:
 		open()
-		

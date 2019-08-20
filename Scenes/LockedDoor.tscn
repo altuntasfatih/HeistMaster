@@ -14,3 +14,4 @@ texture = ExtResource( 3 )
 [node name="CanvasLayer" type="CanvasLayer" parent="." index="4"]
 
 [node name="NumperPad" parent="CanvasLayer" index="0" instance=ExtResource( 4 )]
+[connection signal="combination_correct" from="CanvasLayer/NumperPad" to="." method="_on_NumperPad_combination_correct"]

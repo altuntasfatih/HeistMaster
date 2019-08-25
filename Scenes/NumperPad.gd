@@ -26,7 +26,8 @@ func _on_Button_pressed(button):
 	
 func  check_guess():
 	if guess == combination :
-		AudioStreamPlayer.stream = load("res://SFX/threeTone1.ogg")
+		$AudioStreamPlayer.stream = load("res://SFX/threeTone1.ogg")
+		
 		$AudioStreamPlayer.play()
 		$Timer.start()
 		light.texture=load(Global.green_light)
@@ -51,6 +52,7 @@ func update_display():
 		check_guess()
 
 func _on_Timer_timeout():
+	$AudioStreamPlayer.stop()
 	emit_signal("combination_correct")
 	hide()
 	reset_lock()

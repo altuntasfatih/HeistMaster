@@ -12,7 +12,7 @@ func _ready():
 	reset_lock()
 	display.bbcode_enabled=true
 	$AudioStreamPlayer.autoplay=false
-
+	
 func connect_buttons():
 	for child in  $VSplitContainer/ButtonContainer/ButtonGrid.get_children():
 		if child is Button:
@@ -27,7 +27,6 @@ func _on_Button_pressed(button):
 func  check_guess():
 	if guess == combination :
 		$AudioStreamPlayer.stream = load("res://SFX/threeTone1.ogg")
-		
 		$AudioStreamPlayer.play()
 		$Timer.start()
 		light.texture=load(Global.green_light)
@@ -45,6 +44,7 @@ func reset_lock():
 	light.texture=load(Global.red_light)
 	display.clear()
 	guess.clear()
+	$AudioStreamPlayer.stop()
 	
 func update_display():
 	display.bbcode_text= "[center]" + PoolStringArray(guess).join("")+ "[/center]"

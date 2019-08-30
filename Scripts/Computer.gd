@@ -3,6 +3,7 @@ extends Area2D
 var can_click = false
 var combination
 export var combination_length = 4
+signal combination
 
 func _ready():
 	$Light2D.enabled=false
@@ -12,6 +13,7 @@ func generate_combination():
 	var combination_generator= get_tree().get_root().find_node("CombinationGenerator",true,false)
 	combination=combination_generator.generate_combination(combination_length)
 	set_popup_text()
+	emit_signal("combination",combination)
 	
 func _on_Computer_body_entered(body):
 	can_click=true

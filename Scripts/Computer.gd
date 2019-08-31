@@ -3,17 +3,23 @@ extends Area2D
 var can_click = false
 var combination
 export var combination_length = 4
+export var lock_group = "Unset"
 signal combination
 
 func _ready():
 	$Light2D.enabled=false
 	generate_combination()
-
+	initLable()
+	
+func initLable():
+	#$Label.rect_rotation=-rotation_degrees
+	$Label.text=lock_group;
+	
 func generate_combination():
 	var combination_generator= get_tree().get_root().find_node("CombinationGenerator",true,false)
 	combination=combination_generator.generate_combination(combination_length)
 	set_popup_text()
-	emit_signal("combination",combination)
+	emit_signal("combination",combination,lock_group)
 	
 func _on_Computer_body_entered(body):
 	can_click=true
@@ -30,4 +36,4 @@ func _input_event(viewport, event, shape_idx):
 		generate_combination()
 func set_popup_text():
 	$CanvasLayer/ComputerPopup.set_text( PoolStringArray(combination).join(""))
-	
+

@@ -1,19 +1,36 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Scenes/Chracters/Character.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scripts/Player.gd" type="Script" id=2]
-[ext_resource path="res://GFX/PNG/Hitman 1/hitman1_stand.png" type="Texture" id=3]
+[ext_resource path="res://Scenes/Chracters/box_occluder.tres" type="OccluderPolygon2D" id=3]
+[ext_resource path="res://GFX/PNG/Hitman 1/hitman1_stand.png" type="Texture" id=4]
+[ext_resource path="res://Scenes/mytheme.tres" type="Theme" id=5]
 
 [node name="Player" index="0" instance=ExtResource( 1 )]
 collision_mask = 2
 script = ExtResource( 2 )
 
 [node name="Sprite" parent="." index="0"]
-texture = ExtResource( 3 )
+position = Vector2( 0, 0 )
+
+[node name="LightOccluder2D" parent="." index="2"]
+occluder = ExtResource( 3 )
 
 [node name="Light2D" type="Light2D" parent="." index="3"]
-texture = ExtResource( 3 )
+texture = ExtResource( 4 )
 
 [node name="VisionModeTimer" type="Timer" parent="." index="4"]
 one_shot = true
+
+[node name="Timer" type="Timer" parent="." index="5"]
+one_shot = true
+
+[node name="Label" type="Label" parent="." index="6"]
+margin_left = 24.0
+margin_top = -21.5
+margin_right = 65.0
+margin_bottom = -4.5
+theme = ExtResource( 5 )
+text = "0.00"
 [connection signal="timeout" from="VisionModeTimer" to="." method="_on_Timer_timeout"]
+[connection signal="timeout" from="Timer" to="." method="reveal"]

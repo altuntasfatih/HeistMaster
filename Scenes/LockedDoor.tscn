@@ -9,7 +9,7 @@
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 32.3004, 19.0583 )
 
-[node name="LockedDoor" instance=ExtResource( 1 )]
+[node name="LockedDoor" index="0" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
 
 [node name="Sprite" parent="." index="3"]
@@ -37,4 +37,5 @@ rect_scale = Vector2( 1.03761, 0.651142 )
 theme = ExtResource( 5 )
 text = "Test
 "
+[connection signal="combination_correct" from="CanvasLayer/NumperPad" to="." method="_on_NumperPad_combination_correct"]
 [connection signal="body_entered" from="ExitDoorSection" to="." method="_on_ExitDoorSection_body_entered"]

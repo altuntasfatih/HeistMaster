@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://Scripts/Navigation2D.gd" type="Script" id=1]
 [ext_resource path="res://Scripts/Destinations.gd" type="Script" id=2]
@@ -14,6 +14,8 @@
 [ext_resource path="res://Scenes/Chracters/SecurityCamera.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Scenes/CombinationGenerator.tscn" type="PackedScene" id=13]
 [ext_resource path="res://Scenes/GUI.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Scenes/Exit.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Scenes/BriefCase.tscn" type="PackedScene" id=16]
 
 [sub_resource type="NavigationPolygon" id=1]
 vertices = PoolVector2Array( 580.085, -8.85927, 311.114, -5.88721, 262.136, -6.41939, 263.264, -55.8174, 316.42, -58.363, 386.596, -57.819, 444.259, -57.275, 1012.99, -246.815, 1015.42, -136.104, 823.496, -132.199, 773.305, -135.196, 76.0251, -250.487, 644.045, -132.545, 701.146, -136.205, 698.118, -60.0089, 642.272, -57.275, 689.457, 714.241, 690.943, 821.235, 588.407, 816.777, 630.61, 714.241, 592.865, 633.996, 628.53, 635.482, 441.092, -133.584, 386.596, -133.434, 771.791, -60.0089, 824.388, -56.412, 823.496, 317.175, 581.672, 582.57, 820.524, 437.543, 823.496, 586.146, 780.402, 819.452, 775.943, 716.916, 902.553, 715.727, 1013.71, 822.424, 1013.71, 589.118, 903.445, 633.996, 310.593, 583.218, 442.776, 635.482, 389.874, 635.482, 246.621, 818.263, 72.7557, 822.721, 74.2418, 584.957, 246.898, 637.187, 262.892, 580.394, 315.876, -134.522, 263.264, -139.035, 499.84, 715.727, 501.326, 825.693, 392.846, 825.693, 440.399, 717.213, 261.875, 444.136, 261.586, 390.649, 190.54, 440.044, 189.235, 389.561, 1019.65, 389.99, 1018.17, 498.47, 911.172, 496.984, 908.2, 437.543, 822.01, 391.476, 77.511, -137.549, 948.322, -54.9261, 950.106, 135.285, 946.539, 151.334, 182.925, 505.867, 73.9445, 502.631, 74.539, -55.8174, 188.967, -6.924, 226.308, -6.41939, 948.025, 308.853 )
@@ -148,6 +150,15 @@ rotation = 0.785398
 [node name="CombinationGenerator" parent="." instance=ExtResource( 13 )]
 
 [node name="GUI" parent="." instance=ExtResource( 14 )]
-[connection signal="combination" from="Computers/Computer" to="LockedDooors/LockedDoor2" method="_on_Computer_combination"]
+
+[node name="Exit" parent="." instance=ExtResource( 15 )]
+margin_left = 686.0
+margin_top = -244.0
+margin_right = 936.0
+margin_bottom = -144.0
+
+[node name="BriefCase" parent="." instance=ExtResource( 16 )]
+position = Vector2( 813, 239 )
 [connection signal="combination" from="Computers/Computer" to="LockedDooors/LockedDoor" method="_on_Computer_combination"]
+[connection signal="combination" from="Computers/Computer" to="LockedDooors/LockedDoor2" method="_on_Computer_combination"]
 [connection signal="combination" from="Computers/Computer2" to="LockedDooors/LockedDoor3" method="_on_Computer_combination"]

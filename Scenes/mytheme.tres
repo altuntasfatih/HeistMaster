@@ -11,9 +11,9 @@ font_data = ExtResource( 1 )
 texture = ExtResource( 2 )
 region_rect = Rect2( 0, 0, 100, 100 )
 
-[sub_resource type="StyleBoxEmpty" id=4]
+[sub_resource type="StyleBoxEmpty" id=3]
 
-[sub_resource type="DynamicFont" id=3]
+[sub_resource type="DynamicFont" id=4]
 size = 14
 font_data = ExtResource( 3 )
 
@@ -37,7 +37,7 @@ ItemList/constants/icon_margin = 4
 ItemList/constants/line_separation = 2
 ItemList/constants/vseparation = 2
 ItemList/fonts/font = null
-ItemList/styles/bg = SubResource( 4 )
+ItemList/styles/bg = SubResource( 3 )
 ItemList/styles/bg_focus = null
 ItemList/styles/cursor = null
 ItemList/styles/cursor_unfocused = null
@@ -50,7 +50,7 @@ Label/constants/line_spacing = 3
 Label/constants/shadow_as_outline = 0
 Label/constants/shadow_offset_x = 1
 Label/constants/shadow_offset_y = 1
-Label/fonts/font = SubResource( 3 )
+Label/fonts/font = SubResource( 4 )
 Label/styles/normal = null
 RichTextLabel/colors/default_color = Color( 0.0901961, 0.0862745, 0.0862745, 1 )
 RichTextLabel/colors/font_color_selected = Color( 0.490196, 0.490196, 0.490196, 1 )

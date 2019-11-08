@@ -11,7 +11,7 @@ var nigtvision_off_sfx ="res://SFX/nightvision_off.wav"
 var red_light="res://GFX/Interface/PNG/dotRed.png"
 var green_light="res://GFX/Interface/PNG/dotGreen.png"
 
-
+var briefcase_sprite="res://GFX/Loot/suitcase.png"
 var box_sprite="res://GFX/PNG/Tiles/tile_129.png"
 var box_ocluder="res://Scenes/Chracters/box_occluder.tres"
 

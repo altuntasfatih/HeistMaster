@@ -95,4 +95,9 @@ func reveal():
 	
 func update_disguise_display():
 	get_tree().call_group("DisguiseDisplay","update_disguises",disguises)
-	
+
+func collect_briefcase():
+	var loot = Node.new()
+	loot.set_name("briefcase")
+	add_child(loot)
+	get_tree().call_group("interface","collect_loot")

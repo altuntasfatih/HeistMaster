@@ -11,6 +11,7 @@ func _ready():
 func NightVision_mode():
 	inform_npc("NightVision_mode")
 	color = NIGHTVISION
+	print(Global)
 	play_sfx(Global.nigtvision_on_sfx)
 	get_tree().call_group("labels","show")
 	
@@ -22,8 +23,9 @@ func DarkVision_mode():
 	get_tree().call_group("labels","hide")
 	
 func play_sfx(src_file):
-	$AudioStreamPlayer2D.stream=load(src_file)
-	$AudioStreamPlayer2D.play()
+	print(src_file)
+	$AudioStreamPlayer.stream=load(src_file)
+	$AudioStreamPlayer.play()
 	
 func inform_npc(vision_mode):
 	get_tree().call_group("npc",vision_mode)

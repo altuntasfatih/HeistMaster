@@ -9,7 +9,7 @@
 [ext_resource path="res://Tilesets/AutoTileWalls.tres" type="TileSet" id=7]
 [ext_resource path="res://Tilesets/Furniture.tres" type="TileSet" id=8]
 [ext_resource path="res://Scenes/Computer.tscn" type="PackedScene" id=9]
-[ext_resource path="res://Scripts/VissionMode.gd" type="Script" id=10]
+[ext_resource path="res://Scenes/VissionMode.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Scenes/Chracters/Guard.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Scenes/Chracters/SecurityCamera.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Scenes/CombinationGenerator.tscn" type="PackedScene" id=13]
@@ -80,7 +80,6 @@ position = Vector2( 572.997, 701.821 )
 rotation = 1.5708
 
 [node name="Player" parent="." instance=ExtResource( 6 )]
-editor/display_folded = true
 position = Vector2( 512.361, 297.236 )
 collision_mask = 1
 
@@ -100,6 +99,7 @@ format = 1
 tile_data = PoolIntArray( -65523, 1610612737, 0, 13, -1073741819, 0, 65549, 1, 0, 65550, -1073741815, 0, 196622, -1610612735, 0, 262159, -1073741822, 0, 720898, 1610612737, 0, 786433, 4, 0 )
 
 [node name="Computers" type="Node2D" parent="."]
+editor/display_folded = true
 
 [node name="Computer" parent="Computers" instance=ExtResource( 9 )]
 position = Vector2( 989.42, 223.527 )
@@ -111,15 +111,10 @@ position = Vector2( 159.688, 797.097 )
 rotation = -1.5708
 lock_group = "2"
 
-[node name="VissionMode" type="CanvasModulate" parent="."]
-editor/display_folded = true
-visible = false
-color = Color( 0.105882, 0.0862745, 0.0862745, 1 )
-script = ExtResource( 10 )
-
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="VissionMode"]
+[node name="VissionMode" parent="." instance=ExtResource( 10 )]
 
 [node name="Guards" type="Node2D" parent="."]
+editor/display_folded = true
 position = Vector2( 805.094, 192.261 )
 
 [node name="Guard" parent="Guards" instance=ExtResource( 11 )]
@@ -135,6 +130,7 @@ position = Vector2( -721.3, 214.097 )
 position = Vector2( -387.3, 414.097 )
 
 [node name="SecurityCameras" type="Node2D" parent="."]
+editor/display_folded = true
 
 [node name="SecurityCamera" parent="SecurityCameras" instance=ExtResource( 12 )]
 position = Vector2( 61.4269, -214.966 )
@@ -159,6 +155,6 @@ margin_bottom = -144.0
 
 [node name="BriefCase" parent="." instance=ExtResource( 16 )]
 position = Vector2( 813, 239 )
-[connection signal="combination" from="Computers/Computer" to="LockedDooors/LockedDoor" method="_on_Computer_combination"]
 [connection signal="combination" from="Computers/Computer" to="LockedDooors/LockedDoor2" method="_on_Computer_combination"]
+[connection signal="combination" from="Computers/Computer" to="LockedDooors/LockedDoor" method="_on_Computer_combination"]
 [connection signal="combination" from="Computers/Computer2" to="LockedDooors/LockedDoor3" method="_on_Computer_combination"]

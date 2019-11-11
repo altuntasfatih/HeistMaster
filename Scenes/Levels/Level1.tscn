@@ -33,6 +33,7 @@ position = Vector2( 0.543976, 0 )
 navpoly = SubResource( 1 )
 
 [node name="Destinations" type="Node2D" parent="Navigation2D"]
+editor/display_folded = true
 script = ExtResource( 2 )
 
 [node name="Destination" type="Position2D" parent="Navigation2D/Destinations"]
@@ -80,6 +81,7 @@ position = Vector2( 572.997, 701.821 )
 rotation = 1.5708
 
 [node name="Player" parent="." instance=ExtResource( 6 )]
+editor/display_folded = true
 position = Vector2( 512.361, 297.236 )
 collision_mask = 1
 
@@ -155,6 +157,6 @@ margin_bottom = -144.0
 
 [node name="BriefCase" parent="." instance=ExtResource( 16 )]
 position = Vector2( 813, 239 )
-[connection signal="combination" from="Computers/Computer" to="LockedDooors/LockedDoor2" method="_on_Computer_combination"]
 [connection signal="combination" from="Computers/Computer" to="LockedDooors/LockedDoor" method="_on_Computer_combination"]
+[connection signal="combination" from="Computers/Computer" to="LockedDooors/LockedDoor2" method="_on_Computer_combination"]
 [connection signal="combination" from="Computers/Computer2" to="LockedDooors/LockedDoor3" method="_on_Computer_combination"]

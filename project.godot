@@ -8,9 +8,14 @@
 
 config_version=4
 
-_global_script_classes=[  ]
+_global_script_classes=[ {
+"base": "Control",
+"class": "Joystick",
+"language": "GDScript",
+"path": "res://Joystick/Joystick.gd"
+} ]
 _global_script_class_icons={
-
+"Joystick": ""
 }
 
 [application]
@@ -23,6 +28,10 @@ config/icon="res://icon.png"
 
 Global="*res://Scripts/Global.gd"
 Music="*res://Scenes/Music.tscn"
+
+[display]
+
+window/stretch/mode="viewport"
 
 [input]
 
@@ -75,6 +84,10 @@ toggle_disguise={
  ]
 }
 
+[input_devices]
+
+pointing/emulate_touch_from_mouse=true
+
 [layer_names]
 
 2d_physics/layer_1="Player"
@@ -85,5 +98,9 @@ toggle_disguise={
 
 [rendering]
 
+quality/driver/driver_name="GLES2"
+quality/shading/force_vertex_shading=true
+quality/shading/force_lambert_over_burley=true
+quality/shading/force_blinn_over_ggx=true
 environment/default_clear_color=Color( 0.0509804, 0.0509804, 0.0509804, 1 )
 environment/default_environment="res://default_env.tres"

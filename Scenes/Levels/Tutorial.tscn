@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://Scripts/Tutorial.gd" type="Script" id=1]
 [ext_resource path="res://Tilesets/FloorTiles.tres" type="TileSet" id=2]
@@ -12,6 +12,8 @@
 [ext_resource path="res://Lightmaps/torchmap.png" type="Texture" id=10]
 [ext_resource path="res://GFX/Interface/PNG/crossair_blueOutline.png" type="Texture" id=11]
 [ext_resource path="res://SFX/message.wav" type="AudioStream" id=12]
+[ext_resource path="res://Scenes/GUI.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Scenes/TutorialGui.tscn" type="PackedScene" id=14]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 156.771, 65.2787 )
@@ -42,6 +44,7 @@ rotation = 1.5708
 
 [node name="Player" parent="." instance=ExtResource( 5 )]
 position = Vector2( 237.303, 329.999 )
+disguises = 1
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 current = true
@@ -90,7 +93,6 @@ position = Vector2( 1066.42, 733.642 )
 position = Vector2( 734.493, 438.313 )
 
 [node name="ObjectiveAreas" type="Node2D" parent="."]
-editor/display_folded = true
 
 [node name="ObjectiveMove" type="Area2D" parent="ObjectiveAreas"]
 editor/display_folded = true
@@ -115,6 +117,7 @@ __meta__ = {
 shape = SubResource( 2 )
 
 [node name="ObjectiveNightVision" type="Area2D" parent="ObjectiveAreas"]
+editor/display_folded = true
 position = Vector2( 1114.08, 447.675 )
 collision_layer = 2
 __meta__ = {
@@ -139,6 +142,10 @@ texture = ExtResource( 11 )
 stream = ExtResource( 12 )
 
 [node name="Tween" type="Tween" parent="."]
+
+[node name="GUI" parent="." instance=ExtResource( 13 )]
+
+[node name="TutorialGui" parent="." instance=ExtResource( 14 )]
 [connection signal="body_entered" from="BriefCase" to="." method="_on_BriefCase_body_entered"]
 [connection signal="body_entered" from="ObjectiveAreas/ObjectiveMove" to="." method="_on_ObjectiveMove_body_entered"]
 [connection signal="body_entered" from="ObjectiveAreas/ObjectiveDoor" to="." method="_on_ObjectiveDoor_body_entered"]

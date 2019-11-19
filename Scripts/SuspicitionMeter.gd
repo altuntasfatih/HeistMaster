@@ -14,7 +14,7 @@ func _process(_delta):
 	
 func player_seen():
 	suspicion +=suspcion_step
-	if suspicion==100:
+	if suspicion>=100:
 		end_game()
 
 func end_game():

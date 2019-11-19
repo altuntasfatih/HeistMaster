@@ -104,3 +104,6 @@ func _directional_vector(vector: Vector2, n_directions: int, simmetry_angle := P
 	angle *= PI / n_directions
 	angle -= simmetry_angle
 	return Vector2(cos(angle), sin(angle)) * vector.length()
+
+func _on_DisguisesButton_pressed():
+	Input.action_press("toggle_disguise")

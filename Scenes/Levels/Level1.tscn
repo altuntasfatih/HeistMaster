@@ -157,6 +157,6 @@ margin_bottom = -144.0
 
 [node name="BriefCase" parent="." instance=ExtResource( 16 )]
 position = Vector2( 813, 239 )
-[connection signal="combination" from="Computers/Computer" to="LockedDooors/LockedDoor" method="_on_Computer_combination"]
 [connection signal="combination" from="Computers/Computer" to="LockedDooors/LockedDoor2" method="_on_Computer_combination"]
+[connection signal="combination" from="Computers/Computer" to="LockedDooors/LockedDoor" method="_on_Computer_combination"]
 [connection signal="combination" from="Computers/Computer2" to="LockedDooors/LockedDoor3" method="_on_Computer_combination"]

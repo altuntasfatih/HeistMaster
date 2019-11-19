@@ -21,13 +21,11 @@ func _ready():
 
 func _process(delta):
 	move_and_slide(joystick_move.output * MAX_SPEED * velocity_multpilier)
+	look_at(joystick_move.output + position )
 	if disguised:
 		$Label.rect_rotation= -rotation_degrees
 		$Label.text  = str($Timer.time_left).pad_decimals(2)
 
-	look_at(get_global_mouse_position())
-	
-		
 func _input(event):
 	if Input.is_action_just_pressed("ui_vision_mode") && not vision_change_on_colldown:
 		cycle_vision_mode()
@@ -35,6 +33,7 @@ func _input(event):
 		vision_change_on_colldown =true
 	elif  Input.is_action_just_pressed("toggle_disguise"):
 		toggle_disguise()
+		
 		
 func cycle_vision_mode():
 	if current_mode == VisionMode.DARK:
@@ -53,8 +52,7 @@ func toggle_disguise():
 	elif disguises>0:
 		disguise();
 		
-
-	
+			
 func disguise():
 	$Sprite.texture=load(Global.box_sprite)
 	$Light2D.texture=load(Global.box_sprite)

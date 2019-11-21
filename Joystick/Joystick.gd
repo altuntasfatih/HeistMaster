@@ -107,3 +107,9 @@ func _directional_vector(vector: Vector2, n_directions: int, simmetry_angle := P
 
 func _on_DisguisesButton_pressed():
 	Input.action_press("toggle_disguise")
+
+func _on_DoorOpen_pressed():
+	Input.action_press("toggle_door")
+	
+func _on_VisionMode_pressed():
+	Input.action_press("ui_vision_mode")

@@ -51,8 +51,7 @@ func toggle_disguise():
 		reveal()
 	elif disguises>0:
 		disguise();
-		
-			
+	
 func disguise():
 	$Sprite.texture=load(Global.box_sprite)
 	$Light2D.texture=load(Global.box_sprite)

@@ -15,6 +15,7 @@ func open():
 	if not $AnimationPlayer.is_playing():
 	   $AnimationPlayer.play("Open")
 	
-func _input_event(viewport, event, shape_idx):
-	if Input.is_mouse_button_pressed(BUTTON_LEFT) and can_click:
+func _input(event):
+
+	if can_click and (Input.is_mouse_button_pressed(BUTTON_LEFT) or Input.is_action_just_pressed("toggle_dooor")):
 		open()

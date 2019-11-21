@@ -11,7 +11,7 @@
 [ext_resource path="res://Scripts/LootContainer.gd" type="Script" id=9]
 [ext_resource path="res://Joystick/Joystick.tscn" type="PackedScene" id=10]
 [ext_resource path="res://onscreenControls/Sprites/flatDark/flatDark47.png" type="Texture" id=11]
-[ext_resource path="res://onscreenControls/Sprites/flatDark/flatDark45.png" type="Texture" id=12]
+[ext_resource path="res://onscreenControls/Sprites/flatDark/flatDark28.png" type="Texture" id=12]
 
 [node name="GUI" type="CanvasLayer"]
 
@@ -171,6 +171,19 @@ focus_mode = 0
 enabled_focus_mode = 0
 icon = ExtResource( 12 )
 flat = true
+
+[node name="VisionMode" type="Button" parent="Joystick"]
+margin_left = 74.8475
+margin_top = -43.8841
+margin_right = 166.848
+margin_bottom = 42.1159
+rect_scale = Vector2( 0.75, 0.75 )
+focus_mode = 0
+enabled_focus_mode = 0
+icon = ExtResource( 11 )
+flat = true
 [connection signal="pressed" from="Joystick/DisguisesButton" to="Joystick" method="_on_DisguisesButton_pressed"]
+[connection signal="pressed" from="Joystick/DoorOpen" to="Joystick" method="_on_DoorOpen_pressed"]
+[connection signal="pressed" from="Joystick/VisionMode" to="Joystick" method="_on_VisionMode_pressed"]
 
 [editable path="Joystick"]

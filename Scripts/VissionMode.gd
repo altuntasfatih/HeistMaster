@@ -11,7 +11,6 @@ func _ready():
 func NightVision_mode():
 	inform_npc("NightVision_mode")
 	color = NIGHTVISION
-	print(Global)
 	play_sfx(Global.nigtvision_on_sfx)
 	get_tree().call_group("labels","show")
 	

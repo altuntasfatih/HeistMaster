@@ -14,7 +14,7 @@ func get_json():
     file.close()
     return parse_json(content)
 
-	
+
 func update_pointer_position(number):
 	var pointer=$ObjectivePointer
 	var marker=$ObjectiveMarkers.get_child(number)
@@ -26,7 +26,6 @@ func update_pointer_position(number):
 	$AudioStreamPlayer.play()
 	$TutorialGui/Popup/Label.text=text[str(number)]
 
-	
 func _on_ObjectiveMove_body_entered(body):
 	update_pointer_position(1);
 

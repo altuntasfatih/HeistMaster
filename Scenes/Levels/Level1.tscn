@@ -66,7 +66,6 @@ position = Vector2( 286.987, -95.1916 )
 position = Vector2( 130.822, 636.986 )
 
 [node name="LockedDooors" type="Node2D" parent="."]
-editor/display_folded = true
 position = Vector2( 286.987, -94.5207 )
 
 [node name="LockedDoor" parent="LockedDooors" instance=ExtResource( 5 )]
@@ -81,7 +80,6 @@ position = Vector2( 572.997, 701.821 )
 rotation = 1.5708
 
 [node name="Player" parent="." instance=ExtResource( 6 )]
-editor/display_folded = true
 position = Vector2( 512.361, 297.236 )
 collision_mask = 1
 
@@ -101,17 +99,16 @@ format = 1
 tile_data = PoolIntArray( -65523, 1610612737, 0, 13, -1073741819, 0, 65549, 1, 0, 65550, -1073741815, 0, 196622, -1610612735, 0, 262159, -1073741822, 0, 720898, 1610612737, 0, 786433, 4, 0 )
 
 [node name="Computers" type="Node2D" parent="."]
-editor/display_folded = true
 
 [node name="Computer" parent="Computers" instance=ExtResource( 9 )]
 position = Vector2( 989.42, 223.527 )
 rotation = 3.14159
-lock_group = "1"
+lock_group = "A"
 
 [node name="Computer2" parent="Computers" instance=ExtResource( 9 )]
 position = Vector2( 159.688, 797.097 )
 rotation = -1.5708
-lock_group = "2"
+lock_group = "B"
 
 [node name="VissionMode" parent="." instance=ExtResource( 10 )]
 
@@ -157,6 +154,6 @@ margin_bottom = -144.0
 
 [node name="BriefCase" parent="." instance=ExtResource( 16 )]
 position = Vector2( 813, 239 )
-[connection signal="combination" from="Computers/Computer" to="LockedDooors/LockedDoor" method="_on_Computer_combination"]
 [connection signal="combination" from="Computers/Computer" to="LockedDooors/LockedDoor2" method="_on_Computer_combination"]
+[connection signal="combination" from="Computers/Computer" to="LockedDooors/LockedDoor" method="_on_Computer_combination"]
 [connection signal="combination" from="Computers/Computer2" to="LockedDooors/LockedDoor3" method="_on_Computer_combination"]

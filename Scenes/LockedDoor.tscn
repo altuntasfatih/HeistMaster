@@ -1,15 +1,20 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Scenes/Door.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scripts/LockedDoor.gd" type="Script" id=2]
 [ext_resource path="res://GFX/PNG/Tiles/tile_463.png" type="Texture" id=3]
 [ext_resource path="res://Scenes/NumperPad.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scenes/mytheme.tres" type="Theme" id=5]
+[ext_resource path="res://GFX/Interface/Fonts/kenvector_future_thin.ttf" type="DynamicFontData" id=6]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 32.3004, 19.0583 )
 
-[node name="LockedDoor" index="0" instance=ExtResource( 1 )]
+[sub_resource type="DynamicFont" id=2]
+size = 20
+font_data = ExtResource( 6 )
+
+[node name="LockedDoor" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
 
 [node name="Sprite" parent="." index="3"]
@@ -31,11 +36,14 @@ shape = SubResource( 1 )
 ]]
 margin_left = -24.9052
 margin_top = -31.9297
-margin_right = 23.0948
+margin_right = 25.0948
 margin_bottom = 5.0703
+rect_min_size = Vector2( 50, 20 )
 rect_scale = Vector2( 1.03761, 0.651142 )
 theme = ExtResource( 5 )
-text = "Test
-"
+custom_fonts/font = SubResource( 2 )
+text = "A"
+align = 1
+autowrap = true
 [connection signal="combination_correct" from="CanvasLayer/NumperPad" to="." method="_on_NumperPad_combination_correct"]
 [connection signal="body_entered" from="ExitDoorSection" to="." method="_on_ExitDoorSection_body_entered"]

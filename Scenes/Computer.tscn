@@ -1,13 +1,18 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Scripts/Computer.gd" type="Script" id=1]
 [ext_resource path="res://GFX/PNG/Tiles/tile_537.png" type="Texture" id=2]
 [ext_resource path="res://GFX/PNG/Tiles/tile_519.png" type="Texture" id=3]
 [ext_resource path="res://Scenes/ComputerPopup.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scenes/mytheme.tres" type="Theme" id=5]
+[ext_resource path="res://GFX/Interface/Fonts/kenvector_future_thin.ttf" type="DynamicFontData" id=6]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 64, 48 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 20
+font_data = ExtResource( 6 )
 
 [node name="Computer" type="Area2D"]
 position = Vector2( 0, 0.278023 )
@@ -34,12 +39,15 @@ offset = Vector2( 0, -32 )
 [node name="Label" type="Label" parent="." groups=[
 "labels",
 ]]
-margin_left = -31.9725
-margin_top = 20.8516
-margin_right = 16.0275
-margin_bottom = 37.8516
-rect_rotation = -90.0
+margin_left = 17.1516
+margin_top = -30.399
+margin_right = 69.1516
+margin_bottom = -7.39905
+rect_min_size = Vector2( 30, 20 )
 theme = ExtResource( 5 )
-text = "Test"
+custom_fonts/font = SubResource( 2 )
+text = "A"
+align = 1
+autowrap = true
 [connection signal="body_entered" from="." to="." method="_on_Computer_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_Computer_body_exited"]

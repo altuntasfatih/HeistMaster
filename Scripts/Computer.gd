@@ -1,5 +1,4 @@
 extends Area2D
-
 var can_click = false
 var combination
 export var combination_length = 4
@@ -12,7 +11,7 @@ func _ready():
 	initLable()
 	
 func initLable():
-	#$Label.rect_rotation=-rotation_degrees
+	$Label.rect_rotation=-rotation_degrees
 	$Label.text=lock_group;
 	
 func generate_combination():
@@ -34,6 +33,7 @@ func _input_event(viewport, event, shape_idx):
 		$CanvasLayer/ComputerPopup.popup_centered()
 		$Light2D.enabled=true
 		generate_combination()
+		
 func set_popup_text():
 	$CanvasLayer/ComputerPopup.set_text( PoolStringArray(combination).join(""))
 

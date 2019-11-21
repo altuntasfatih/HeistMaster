@@ -9,8 +9,9 @@
 [node name="ComputerPopup" type="Popup"]
 margin_left = -0.82251
 margin_top = -0.822449
-margin_right = 599.177
-margin_bottom = 479.178
+margin_right = 399.177
+margin_bottom = 359.178
+rect_min_size = Vector2( 400, 360 )
 theme = ExtResource( 1 )
 script = ExtResource( 2 )
 
@@ -36,20 +37,21 @@ patch_margin_top = 12
 patch_margin_right = 12
 patch_margin_bottom = 12
 
-[node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 580.981, 466.828 )
-scale = Vector2( 0.5, 0.5 )
-texture = ExtResource( 5 )
-
-[node name="RichTextLabel" type="RichTextLabel" parent="."]
+[node name="CenterContainer" type="CenterContainer" parent="NinePatchRect2"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 20.0
-margin_top = 20.0
-margin_right = -20.0
-margin_bottom = -20.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="NinePatchRect2/CenterContainer"]
+margin_left = 80.0
+margin_top = 110.0
+margin_right = 280.0
+margin_bottom = 210.0
+rect_min_size = Vector2( 200, 100 )
 rect_clip_content = false
 mouse_filter = 2
+custom_colors/default_color = Color( 0, 0, 0, 1 )
 bbcode_enabled = true
-bbcode_text = "Test"
-text = "Test"
+
+[node name="Sprite" type="Sprite" parent="."]
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 5 )

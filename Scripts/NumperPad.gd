@@ -1,7 +1,7 @@
 extends Popup
 
-onready var display =$VSplitContainer/DisplayContainer/Display
-onready var light =$VSplitContainer/ButtonContainer/ButtonGrid/Light
+onready var display =$VBoxContainer/CenterContainer/DisplayContainer/Display
+onready var light =$VBoxContainer/ButtonContainer/ButtonGrid/Light
 var combination = []
 var guess =[]
 
@@ -12,9 +12,10 @@ func _ready():
 	reset_lock()
 	display.bbcode_enabled=true
 	$AudioStreamPlayer.autoplay=false
+	set_exclusive(false)
 	
 func connect_buttons():
-	for child in  $VSplitContainer/ButtonContainer/ButtonGrid.get_children():
+	for child in  $VBoxContainer/ButtonContainer/ButtonGrid.get_children():
 		if child is Button:
 			child.connect("pressed",self,"_on_Button_pressed",[child.text])
 			
@@ -34,7 +35,6 @@ func  check_guess():
 		reset_lock();
 	
 func enter(number):
-	print("on input")
 	$AudioStreamPlayer.stream=load("res://SFX/twoTone1.ogg")
 	$AudioStreamPlayer.play()
 	guess.append(number)

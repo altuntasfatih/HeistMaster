@@ -21,53 +21,60 @@ patch_margin_top = 10
 patch_margin_right = 10
 patch_margin_bottom = 10
 
-[node name="VSplitContainer" type="VSplitContainer" parent="."]
-editor/display_folded = true
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_left = 20.0
+margin_top = 20.0
+margin_right = -20.0
+margin_bottom = -20.0
 
-[node name="DisplayContainer" type="CenterContainer" parent="VSplitContainer"]
-margin_right = 300.0
+[node name="CenterContainer" type="CenterContainer" parent="VBoxContainer"]
+margin_right = 260.0
 margin_bottom = 100.0
 
-[node name="DisplayGlass" type="NinePatchRect" parent="VSplitContainer/DisplayContainer"]
-margin_left = 25.0
-margin_right = 275.0
+[node name="DisplayContainer" type="CenterContainer" parent="VBoxContainer/CenterContainer"]
+margin_left = 5.0
+margin_right = 255.0
+margin_bottom = 100.0
+
+[node name="DisplayGlass" type="NinePatchRect" parent="VBoxContainer/CenterContainer/DisplayContainer"]
+margin_right = 250.0
 margin_bottom = 100.0
 rect_min_size = Vector2( 250, 100 )
 texture = ExtResource( 4 )
 
-[node name="Display" type="RichTextLabel" parent="VSplitContainer/DisplayContainer"]
-margin_left = 100.0
+[node name="Display" type="RichTextLabel" parent="VBoxContainer/CenterContainer/DisplayContainer"]
+margin_left = 75.0
 margin_top = 10.0
-margin_right = 200.0
+margin_right = 175.0
 margin_bottom = 90.0
 rect_min_size = Vector2( 100, 80 )
 tab_size = 3
 text = "selam ben fatih
 "
 
-[node name="ButtonContainer" type="CenterContainer" parent="VSplitContainer"]
-margin_top = 112.0
-margin_right = 300.0
-margin_bottom = 400.0
+[node name="ButtonContainer" type="CenterContainer" parent="VBoxContainer"]
+margin_top = 104.0
+margin_right = 260.0
+margin_bottom = 288.0
 
-[node name="ButtonGrid" type="GridContainer" parent="VSplitContainer/ButtonContainer"]
-margin_left = 150.0
-margin_top = 144.0
-margin_right = 150.0
-margin_bottom = 144.0
+[node name="ButtonGrid" type="GridContainer" parent="VBoxContainer/ButtonContainer"]
+margin_left = 130.0
+margin_top = 92.0
+margin_right = 130.0
+margin_bottom = 92.0
 custom_constants/vseparation = 8
 custom_constants/hseparation = 8
 columns = 3
 
-[node name="Button" type="Button" parent="VSplitContainer/ButtonContainer/ButtonGrid"]
+[node name="Button" type="Button" parent="VBoxContainer/ButtonContainer/ButtonGrid"]
 margin_right = 40.0
 margin_bottom = 40.0
 rect_min_size = Vector2( 40, 40 )
 text = "1"
 
-[node name="Button2" type="Button" parent="VSplitContainer/ButtonContainer/ButtonGrid"]
+[node name="Button2" type="Button" parent="VBoxContainer/ButtonContainer/ButtonGrid"]
 margin_left = 48.0
 margin_right = 88.0
 margin_bottom = 40.0
@@ -80,7 +87,7 @@ focus_next = NodePath(".")
 focus_previous = NodePath(".")
 text = "2"
 
-[node name="Button3" type="Button" parent="VSplitContainer/ButtonContainer/ButtonGrid"]
+[node name="Button3" type="Button" parent="VBoxContainer/ButtonContainer/ButtonGrid"]
 margin_left = 96.0
 margin_right = 136.0
 margin_bottom = 40.0
@@ -93,7 +100,7 @@ focus_next = NodePath(".")
 focus_previous = NodePath(".")
 text = "3"
 
-[node name="Button4" type="Button" parent="VSplitContainer/ButtonContainer/ButtonGrid"]
+[node name="Button4" type="Button" parent="VBoxContainer/ButtonContainer/ButtonGrid"]
 margin_top = 48.0
 margin_right = 40.0
 margin_bottom = 88.0
@@ -106,7 +113,7 @@ focus_next = NodePath(".")
 focus_previous = NodePath(".")
 text = "4"
 
-[node name="Button5" type="Button" parent="VSplitContainer/ButtonContainer/ButtonGrid"]
+[node name="Button5" type="Button" parent="VBoxContainer/ButtonContainer/ButtonGrid"]
 margin_left = 48.0
 margin_top = 48.0
 margin_right = 88.0
@@ -120,7 +127,7 @@ focus_next = NodePath(".")
 focus_previous = NodePath(".")
 text = "5"
 
-[node name="Button6" type="Button" parent="VSplitContainer/ButtonContainer/ButtonGrid"]
+[node name="Button6" type="Button" parent="VBoxContainer/ButtonContainer/ButtonGrid"]
 margin_left = 96.0
 margin_top = 48.0
 margin_right = 136.0
@@ -134,7 +141,7 @@ focus_next = NodePath(".")
 focus_previous = NodePath(".")
 text = "6"
 
-[node name="Button7" type="Button" parent="VSplitContainer/ButtonContainer/ButtonGrid"]
+[node name="Button7" type="Button" parent="VBoxContainer/ButtonContainer/ButtonGrid"]
 margin_top = 96.0
 margin_right = 40.0
 margin_bottom = 136.0
@@ -147,7 +154,7 @@ focus_next = NodePath(".")
 focus_previous = NodePath(".")
 text = "7"
 
-[node name="Button8" type="Button" parent="VSplitContainer/ButtonContainer/ButtonGrid"]
+[node name="Button8" type="Button" parent="VBoxContainer/ButtonContainer/ButtonGrid"]
 margin_left = 48.0
 margin_top = 96.0
 margin_right = 88.0
@@ -161,7 +168,7 @@ focus_next = NodePath(".")
 focus_previous = NodePath(".")
 text = "8"
 
-[node name="Button9" type="Button" parent="VSplitContainer/ButtonContainer/ButtonGrid"]
+[node name="Button9" type="Button" parent="VBoxContainer/ButtonContainer/ButtonGrid"]
 margin_left = 96.0
 margin_top = 96.0
 margin_right = 136.0
@@ -175,7 +182,7 @@ focus_next = NodePath(".")
 focus_previous = NodePath(".")
 text = "9"
 
-[node name="Light" type="TextureRect" parent="VSplitContainer/ButtonContainer/ButtonGrid"]
+[node name="Light" type="TextureRect" parent="VBoxContainer/ButtonContainer/ButtonGrid"]
 margin_top = 144.0
 margin_right = 40.0
 margin_bottom = 184.0
@@ -183,7 +190,7 @@ rect_min_size = Vector2( 40, 40 )
 texture = ExtResource( 5 )
 expand = true
 
-[node name="Button0" type="Button" parent="VSplitContainer/ButtonContainer/ButtonGrid"]
+[node name="Button0" type="Button" parent="VBoxContainer/ButtonContainer/ButtonGrid"]
 margin_left = 48.0
 margin_top = 144.0
 margin_right = 88.0
@@ -197,7 +204,7 @@ focus_next = NodePath(".")
 focus_previous = NodePath(".")
 text = "0"
 
-[node name="Okey" type="Button" parent="VSplitContainer/ButtonContainer/ButtonGrid"]
+[node name="Okey" type="Button" parent="VBoxContainer/ButtonContainer/ButtonGrid"]
 margin_left = 96.0
 margin_top = 144.0
 margin_right = 136.0

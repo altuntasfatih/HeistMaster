@@ -30,7 +30,7 @@ func _on_Computer_body_exited(body):
 	
 func _input_event(viewport, event, shape_idx):
 	if Input.is_mouse_button_pressed(BUTTON_LEFT) and can_click:
-		$CanvasLayer/ComputerPopup.popup_centered()
+		$CanvasLayer/ComputerPopup.show()
 		$Light2D.enabled=true
 		generate_combination()
 		

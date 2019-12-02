@@ -15,6 +15,10 @@ script = ExtResource( 1 )
 [node name="CenterContainer" type="CenterContainer" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_left = -0.480408
+margin_top = 0.480408
+margin_right = -0.480408
+margin_bottom = 0.480408
 theme = ExtResource( 2 )
 
 [node name="NinePatchRect" type="NinePatchRect" parent="CenterContainer"]

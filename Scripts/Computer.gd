@@ -4,6 +4,7 @@ var combination
 export var combination_length = 4
 export var lock_group = "Unset"
 signal combination
+onready var pop_up= $CanvasLayer/CenterContainer/ComputerPopup
 
 func _ready():
 	$Light2D.enabled=false
@@ -26,14 +27,15 @@ func _on_Computer_body_entered(body):
 func _on_Computer_body_exited(body):
 	can_click=false
 	$Light2D.enabled=false
-	$CanvasLayer/ComputerPopup.hide()
+	pop_up.hide()
 	
-func _input_event(viewport, event, shape_idx):
-	if Input.is_mouse_button_pressed(BUTTON_LEFT) and can_click:
-		$CanvasLayer/ComputerPopup.show()
+func _input(event):
+	if Input.is_mouse_button_pressed(BUTTON_LEFT) and can_click :
+		pop_up.popup_centered()
 		$Light2D.enabled=true
 		generate_combination()
+		can_click=false
 		
 func set_popup_text():
-	$CanvasLayer/ComputerPopup.set_text( PoolStringArray(combination).join(""))
+	pop_up.set_text( PoolStringArray(combination).join(""))
 

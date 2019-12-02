@@ -5,7 +5,6 @@ var combination
 func _ready():
 	$Label.visible=false
 	
-
 func _input(event):
 	if  (Input.is_mouse_button_pressed(BUTTON_LEFT) or Input.is_action_just_pressed("toggle_dooor"))  and can_click:
 		$CanvasLayer/NumperPad.popup_centered()

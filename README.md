@@ -1,5 +1,5 @@
 # HeistMaster
-Here are some of screenshots of the game .After finished it, I will be publish mobile stores I hope :)
+Here are some of screenshots of the game .I hope :) After finished it, I will be publish on mobile stores. 
 
 ![](images/intro.jpg)
 ![](images/tutorial.jpg)
